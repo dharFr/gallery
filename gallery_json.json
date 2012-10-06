@@ -1,0 +1,55 @@
+{
+  "album": {
+    "name": "Summer at the Lake, 2008"
+  },
+  "photos": [
+    {
+      "id":"1",
+      "url":"/img/gallery/image1.jpg",
+      "thumb_url":"img/gallery/thumb1.jpg",
+      "title":"M&M's",
+      "date":" March 29, 2011",
+      "location":"Nice, France"
+    },
+    {
+      "id":"2",
+      "url":"/img/gallery/image2.jpg",
+      "thumb_url":"img/gallery/thumb2.jpg",
+      "title":"Guiness du vendredi!!!",
+      "date":"April 1, 2011",
+      "location":"Biot, France"
+    },
+    {
+      "id":"3",
+      "url":"/img/gallery/image3.jpg",
+      "thumb_url":"img/gallery/thumb3.jpg",
+      "title":"He's watching you...!",
+      "date":"April 22, 2011",
+      "location":"Nice, France"
+    },
+    {
+      "id":"4",
+      "url":"/img/gallery/image4.jpg",
+      "thumb_url":"img/gallery/thumb4.jpg",
+      "title":"Content d'être partit tôt ce matin. Jolie vue!",
+      "date":"July 15, 2011",
+      "location":"Nice, France"
+    },
+    {
+      "id":"5",
+      "url":"/img/gallery/image5.jpg",
+      "thumb_url":"img/gallery/thumb5.jpg",
+      "title":"La récompense des braves ",
+      "date":"July 15, 2011",
+      "location":"Nice, France"
+    },
+    {
+      "id":"6",
+      "url":"/img/gallery/image6.jpg",
+      "thumb_url":"img/gallery/thumb6.jpg",
+      "title":"Woot!",
+      "date":"August 3, 2011",
+      "location":"Nice, France"
+    }
+  ]
+}
