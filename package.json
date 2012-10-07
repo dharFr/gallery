@@ -1,0 +1,9 @@
+{
+  "title": "Backbone Gallery App",
+  "name": "gallery",
+  "version": "1.0",
+  "author": {
+    "name": "dhar"
+  },
+  "licenses": ["DWTFYWPL"]
+}

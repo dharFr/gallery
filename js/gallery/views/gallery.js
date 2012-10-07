@@ -58,7 +58,9 @@
       
       var nbPhotos = this.model.getAlbumLength();
 
-      if (idx < 0) idx = nbPhotos + idx;
+      if (idx < 0) {
+        idx = nbPhotos + idx;
+      }
       var newVal = idx%nbPhotos;
       if (current !== newVal) {
         current = newVal;

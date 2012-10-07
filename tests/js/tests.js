@@ -49,10 +49,10 @@ module("Model : gallery.js", {
 test( "Gallery Model tests", function() {
 
   expect(4);
-  ok( this.model.getAlbumName() == galleryTestData.album.name, "getAlbumName() ok" );
-  ok( this.model.getPhoto(0) == galleryTestData.photos[0], "getPhoto() ok" );
-  ok( this.model.getAlbumLength() == galleryTestData.photos.length, "getAlbumLength() ok");
-  ok( this.model.findIndex("2") == 1, "findIndex() ok");
+  equal( this.model.getAlbumName(), galleryTestData.album.name, "getAlbumName() ok" );
+  equal( this.model.getPhoto(0), galleryTestData.photos[0], "getPhoto() ok" );
+  equal( this.model.getAlbumLength(), galleryTestData.photos.length, "getAlbumLength() ok");
+  equal( this.model.findIndex("2"), 1, "findIndex() ok");
 });
 
 module("View : header.js", {
