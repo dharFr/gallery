@@ -12,7 +12,6 @@
 
     initialize: function(options) {
       this.controller = options.controller;
-      this.controller.router.on('route:photo', this.render, this);
     },
 
     render: function() {
