@@ -11,9 +11,9 @@
 </head>
 <body>
   <div class="container-fluid">
-    <header class="row-fluid">
+    <header id="header" class="row-fluid">
       <div class="span10 offset1">
-        <div id="header" class="centered btn-group">
+        <div class="centered btn-group">
           <button title="prev" id="prev" class="btn"><i class="icon-backward"></i> Previous</button>
           <button title="next" id="next" class="btn">Next <i class="icon-forward"></i></button>      
         </div>
@@ -57,8 +57,11 @@
   <script src="libs/backbone-0.9.2.min.js"></script>
 
   <script src="js/config.js"></script>
-  <script src="js/views.js"></script>
-  <script src="js/models.js"></script>
+  <script src="js/models/gallery.js"></script>
+  <script src="js/views/header.js"></script>
+  <script src="js/views/main-image.js"></script>
+  <script src="js/views/thumbnails.js"></script>
+  <script src="js/views/gallery.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
