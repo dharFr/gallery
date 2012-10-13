@@ -16,7 +16,7 @@ module.exports = function(grunt) {
     },
     qunit: {
       dev: ['tests/index.html'],
-      dist: ['tests/index-dist.html']
+      dist: ['<%= build.dest %>/tests/index.html']
     },
     concat: {
       libs: {
@@ -27,8 +27,19 @@ module.exports = function(grunt) {
           "js/libs/underscore-1.4.1.min.js",
           "js/libs/backbone-0.9.2.min.js"
         ],
-
-        dest: 'dist/<%= pkg.name %>-libs.<%= pkg.version %>.js'
+        dest: '<%= build.dest %>/js/libs/<%= pkg.name %>-libs.<%= pkg.version %>.js'
+      },
+      tests: {
+        src: [
+          '<banner:meta.banner>',
+          'js/gallery/config.js',
+          'js/gallery/models/gallery.js',
+          'js/gallery/views/header.js',
+          'js/gallery/views/main-image.js',
+          'js/gallery/views/thumbnails.js',
+          'js/gallery/views/gallery.js'
+        ],
+        dest: '<%= build.dest %>/tests/js/<%= pkg.name %>-tests.<%= pkg.version %>.js'
       },
       dist: {
         src: [
@@ -41,23 +52,53 @@ module.exports = function(grunt) {
           'js/gallery/views/gallery.js',
           'js/gallery/app.js'
         ],
-
-        dest: 'dist/<%= pkg.name %>-app.<%= pkg.version %>.js'
+        dest: '<%= build.dest %>/js/<%= pkg.name %>-app.<%= pkg.version %>.js'
       }
     },
     min: {
       libs: {
         src: ['<config:concat.libs.dest>'],
-        dest: 'dist/<%= pkg.name %>-libs.<%= pkg.version %>.min.js'
+        dest: '<%= build.dest %>/js/libs/<%= pkg.name %>-libs.<%= pkg.version %>.min.js'
+      },
+      tests: {
+        src: ['<banner:meta.banner>', '<config:concat.tests.dest>'],
+        dest: '<%= build.dest %>/tests/js/<%= pkg.name %>-tests.<%= pkg.version %>.min.js'
       },
       dist: {
         src: ['<banner:meta.banner>', '<config:concat.dist.dest>'],
-        dest: 'dist/<%= pkg.name %>-app.<%= pkg.version %>.min.js'
+        dest: '<%= build.dest %>/js/<%= pkg.name %>-app.<%= pkg.version %>.min.js'
       }
     },
+    targethtml: {
+      release: {
+        src: 'index.html',
+        dest: '<%= build.dest %>/index.html'
+      },
+      tests: {
+        src: 'tests/index.html',
+        dest: '<%= build.dest %>/tests/index.html'
+      }
+    },
+    copy: {
+      dist: {
+        files: {
+          "<%= build.dest %>/css/": "css/**",
+          "<%= build.dest %>/img/gallery/": "img/gallery/**",
+          "<%= build.dest %>/js/libs/bootstrap/": "js/libs/bootstrap/**",
+          "<%= build.dest %>/tests/": ["tests/js/**", "tests/libs/**"],
+          "<%= build.dest %>/gallery_data.json": "gallery_data.json"
+        }
+      }
+    },
+    clean: ["<%= build.dest %>"],
+
     watch: {
       files: '<config:lint.files>',
       tasks: 'lint qunit:dev'
+    },
+
+    build: {
+      dest: 'dist'
     },
     jshint: {
       options: {
@@ -80,7 +121,16 @@ module.exports = function(grunt) {
     uglify: {}
   });
 
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+
+  // Loads grunt-targethtml plugin from local fork
+  // see: https://github.com/changer/grunt-targethtml/pull/3
+  //grunt.loadNpmTasks('grunt-targethtml');
+  grunt.loadTasks('../grunt-targethtml/tasks');
+
+  grunt.registerTask('build', 'clean concat min targethtml copy');
   // Default task.
-  grunt.registerTask('default', 'lint qunit:dev concat min qunit:dist');
+  grunt.registerTask('default', 'lint qunit:dev build qunit:dist');
 
 };

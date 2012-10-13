@@ -35,7 +35,7 @@
         <img src="{{ url }}" alt="{{ title }}">
       </div>
       <div class="span4 caption" id="caption" >
-        <h1>{{ title }}</h1>
+        <h2>{{ title }}</h2>
         <p>Taken on {{ date }} in {{ location }}</p>
       </div>
   </script>
@@ -53,7 +53,27 @@
     </div>
   </script>
 
-  <script src="dist/gallery-libs.1.0.min.js"></script>
-  <script src="dist/gallery-app.1.0.min.js"></script>
+  <!--(if target release)>
+  <script src="js/libs/gallery-libs.1.0.min.js"></script>
+  <!(endif)-->
+  <!--(if target dummy)><!-->
+  <script src="js/libs/json2.js"></script>
+  <script src="js/libs/jquery-1.8.2.min.js"></script>
+  <script src="js/libs/mustache-0.7.js"></script>
+  <script src="js/libs/underscore-1.4.1.min.js"></script>
+  <script src="js/libs/backbone-0.9.2.min.js"></script>
+  <!--<!(endif)-->
+  <!--(if target release)>
+  <script src="js/gallery-app.1.0.min.js"></script>
+  <!(endif)-->
+  <!--(if target dummy)><!-->
+  <script src="js/gallery/config.js"></script>
+  <script src="js/gallery/models/gallery.js"></script>
+  <script src="js/gallery/views/header.js"></script>
+  <script src="js/gallery/views/main-image.js"></script>
+  <script src="js/gallery/views/thumbnails.js"></script>
+  <script src="js/gallery/views/gallery.js"></script>
+  <script src="js/gallery/app.js"></script>
+  <!--<!(endif)-->
 </body>
 </html>
