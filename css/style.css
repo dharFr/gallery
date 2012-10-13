@@ -1,0 +1,10 @@
+.centered {
+  text-align: center;
+}
+.row-fluid {
+  margin: 1em 0;
+}
+.thumbnail[aria-selected=true] {
+  border: 2px solid rgb(0, 136, 204);
+  box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+}
