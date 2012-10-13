@@ -129,7 +129,8 @@ module.exports = function(grunt) {
   //grunt.loadNpmTasks('grunt-targethtml');
   grunt.loadTasks('../grunt-targethtml/tasks');
 
-  grunt.registerTask('build', 'clean concat min targethtml copy');
+  grunt.registerTask('build', 'concat min targethtml copy');
+  grunt.registerTask('clean-build', 'clean concat min targethtml copy');
   // Default task.
   grunt.registerTask('default', 'lint qunit:dev build qunit:dist');
 
