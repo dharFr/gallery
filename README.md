@@ -11,8 +11,6 @@ I currently use the following grunt plugins :
  - [grunt-contrib-copy][grunt-contrib-copy]
  - [grunt-targethtml][grunt-targethtml]
 
-For now, as the original version didn't fit mt needs, I used my own [forked version](https://github.com/dharFr/grunt-targethtml) of grunt-targethtml plugin. Until my (merged) [fix](https://github.com/changer/grunt-targethtml/pull/3) has not been published on *npm*, you'll have to clone my version to run the `targethtml` task.
-
 ## Install
 
 Just [clone][clone] the repo. You already know how to do this, right? Then you'll probably need to run `npm install` in the root folder to install grunt dependencies.

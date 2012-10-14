@@ -123,11 +123,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
-
-  // Loads grunt-targethtml plugin from local fork
-  // see: https://github.com/changer/grunt-targethtml/pull/3
-  //grunt.loadNpmTasks('grunt-targethtml');
-  grunt.loadTasks('../grunt-targethtml/tasks');
+  grunt.loadNpmTasks('grunt-targethtml');
 
   grunt.registerTask('build', 'concat min targethtml copy');
   grunt.registerTask('clean-build', 'clean concat min targethtml copy');
